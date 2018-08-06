@@ -1,67 +1,66 @@
 {
-    "name": "probot-auto-merge",
-    "version": "1.0.0",
-    "description": "A Probot app that automatically merges PRs",
-    "author": "Bob van der Linden <bobvanderlinden@gmail.com> (https://github.com/bobvanderlinden)",
-    "license": "ISC",
-    "repository": "https://github.com/bobvanderlinden/probot-auto-merge.git",
-    "homepage": "https://github.com/bobvanderlinden/probot-auto-merge",
-    "bugs": "https://github.com/bobvanderlinden/probot-auto-merge/issues",
-    "keywords": [
-      "probot",
-      "github",
-      "probot-app"
-    ],
-    "scripts": {
-      "build": "tsc -p tsconfig.json",
-      "dev": "nodemon --exec \"npm start\"",
-      "start": "probot run ./lib/index.js",
-      "lint": "standard --fix",
-      "test": "jest && standard",
-      "test:travis": "jest --coverage --coverageReporters=text-lcov | coveralls && standard",
-      "test:watch": "jest --watch --notify --notifyMode=change --coverage",
-      "heroku-postbuild": "npm run build"
+  "name": "probot-auto-merge",
+  "version": "1.0.0",
+  "description": "A Probot app that automatically merges PRs",
+  "author": "Bob van der Linden <bobvanderlinden@gmail.com> (https://github.com/bobvanderlinden)",
+  "license": "ISC",
+  "repository": "https://github.com/bobvanderlinden/probot-auto-merge.git",
+  "homepage": "https://github.com/bobvanderlinden/probot-auto-merge",
+  "bugs": "https://github.com/bobvanderlinden/probot-auto-merge/issues",
+  "keywords": [
+    "probot",
+    "github",
+    "probot-app"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "nodemon --exec \"npm start\"",
+    "start": "probot run ./lib/index.js",
+    "lint": "standard --fix",
+    "test": "jest && standard",
+    "test:travis": "jest --coverage --coverageReporters=text-lcov | coveralls && standard",
+    "test:watch": "jest --watch --notify --notifyMode=change --coverage",
+    "heroku-postbuild": "npm run build"
+  },
+  "dependencies": {
+    "debug": "^3.1.0",
+    "p-queue": "^2.4.2",
+    "probot": "^7.0.0",
+    "probot-config": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/debug": "0.0.30",
+    "@types/jest": "^23.1.5",
+    "@types/node": "^10.5.2",
+    "@types/p-queue": "^2.3.1",
+    "coveralls": "^3.0.2",
+    "jest": "^22.4.3",
+    "nodemon": "^1.17.2",
+    "smee-client": "^1.0.2",
+    "standard": "^10.0.3",
+    "ts-jest": "^23.0.0",
+    "typescript": "^2.9.2"
+  },
+  "engines": {
+    "node": ">= 8.3.0"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
     },
-    "dependencies": {
-      "debug": "^3.1.0",
-      "p-queue": "^2.4.2",
-      "probot": "^7.0.0",
-      "probot-config": "^0.1.0"
-    },
-    "devDependencies": {
-      "@types/debug": "0.0.30",
-      "@types/jest": "^23.1.5",
-      "@types/node": "^10.5.2",
-      "@types/p-queue": "^2.3.1",
-      "coveralls": "^3.0.2",
-      "jest": "^22.4.3",
-      "nodemon": "^1.17.2",
-      "smee-client": "^1.0.2",
-      "standard": "^10.0.3",
-      "ts-jest": "^23.0.0",
-      "typescript": "^2.9.2"
-    },
-    "engines": {
-      "node": ">= 8.3.0"
-    },
-    "standard": {
-      "env": [
-        "jest"
-      ]
-    },
-    "jest": {
-      "transform": {
-        "^.+\\.tsx?$": "ts-jest"
-      },
-      "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-      "moduleFileExtensions": [
-        "ts",
-        "tsx",
-        "js",
-        "jsx",
-        "json",
-        "node"
-      ]
-    }
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
-  
+}
